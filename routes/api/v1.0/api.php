@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GiphyController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/login', [AuthController::class, 'login']);
 
+Route::controller('auth:api')->group(function(){
+    Route::get('giphy/search', [GiphyController::class, 'search']);
+    Route::get('giphy/{id}', [GiphyController::class, 'getById']);
+});

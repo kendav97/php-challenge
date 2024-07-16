@@ -17,7 +17,7 @@ class AuthController extends Controller
             return response(['message' => 'Invalid Credentials'], 401);
         }
 
-        $accessToken = auth()->user()->createToken('authToken')->accessToken;
+        $accessToken = auth()->user()->createToken('PHP-challenge')->accessToken;
 
         return response([
             'user' => auth()->user(),
