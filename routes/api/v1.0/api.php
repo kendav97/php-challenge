@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GiphyController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserFavoriteGiftController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,13 +18,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-    // return $request->user();
-// });
-
 Route::post('/login', [AuthController::class, 'login']);
 
-Route::controller('auth:api')->group(function(){
+Route::controller('auth:api')->middleware('user.logged')->group(function(){
     Route::get('giphy/search', [GiphyController::class, 'search']);
     Route::get('giphy/{id}', [GiphyController::class, 'getById']);
+
+    Route::get('user/favorite', [UserFavoriteGiftController::class, 'getAll']);
+    Route::post('user/{user_id}/favorite', [UserFavoriteGiftController::class, 'save']);
 });
