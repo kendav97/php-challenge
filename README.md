@@ -48,7 +48,7 @@ Este es un desafío de PHP y laravel para demostrar mis habilidades como program
     ~~~
     DB_CONNECTION=mysql
     DB_HOST=db-test
-    DB_PORT=3307
+    DB_PORT=3306
     DB_DATABASE=php-challenge-test
     DB_USERNAME=admin
     DB_PASSWORD=admin
