@@ -1,24 +1,26 @@
-# PHP Challenge <a name="introduction"></a>
+# PHP Challenge
+
 <p align="left">
-<img src="https://img.shields.io/badge/Autor-Kenneth_Gonzalez-brightgreen?style=flat&logo=codementor&logoColor=%23959da5
-" alt="Build Status">
-<img src="https://img.shields.io/badge/laravel-v10.48.16-blue?style=flat&logo=laravel" alt="Laravel Version">
+    <img src="https://img.shields.io/badge/Autor-Kenneth_Gonzalez-brightgreen?style=flat&logo=codementor&logoColor=%23959da5" alt="Autor">
+    <img src="https://img.shields.io/badge/laravel-v10.48.16-blue?style=flat&logo=laravel" alt="Laravel Version">
 </p>
 
 Este es un desafío de PHP y laravel para demostrar mis habilidades como programador, basandome en [ésta](https://drive.google.com/file/d/1Zr75EPMFhxoyTG1iRi4f5SG931Ng9Bc5/view?usp=drive_link) consigna.
 
 ## Tabla de contenidos  
-1. [Introducción](#introduction)
-2. [Pre requisitos](#pre-requisites)
-3. [Ejecutar en entorno local](#run-local)
-4. [API Reference](#api-reference)
+1. [Introducción](#php-challenge)
+2. [Pre requisitos](#pre-requisitos)
+3. [Ejecutar en entorno local](#ejecutar-en-entorno-local)
+4. [Postman](#postman)
+5. [API Reference](#api-reference)
+6. [Documentación adicional](#documentaci%C3%B3n-adicional)
 
-## Pre requisitos <a name="pre-requisites"></a>
+## Pre requisitos
 
 - Tener docker instalado
 - Hacerse una cuenta y generar una clave de acceso a la API de Giphy, leer la siguiente [documentación](https://developers.giphy.com/docs/api#quick-start-guide)
 
-## Ejecutar en entorno local <a name="run-local"></a>
+## Ejecutar en entorno local
 
 - Clonar el proyecto  
 
@@ -82,11 +84,11 @@ Este es un desafío de PHP y laravel para demostrar mis habilidades como program
 
 Para probar esta API simplemente importe [este](https://drive.google.com/file/d/1Hi1ny_yFIlkDBoKr-bZYE26LK2_W235w/download?usp=drive_link) archivo json con postman y en primer lugar pruebe el `login` ya que el mismo le entregará un token (con una duración de 30 minutos) que automáticamente se utilizará en las otras solucitudes.
 
-## API Reference <a name="api-reference"></a>
+## API Reference
 
 #### Iniciar sesión  
 
-```http
+```
   POST /api/v1.0/login
 ```  
 
@@ -97,7 +99,7 @@ Para probar esta API simplemente importe [este](https://drive.google.com/file/d/
 
 #### Buscar
 
-~~~http
+~~~
   GET /api/v1.0/giphy/search
 ~~~
 
@@ -110,7 +112,7 @@ Para probar esta API simplemente importe [este](https://drive.google.com/file/d/
 
 #### Encontrar por ID
 
-~~~http
+~~~
   GET /api/v1.0/giphy/[id]
 ~~~
 
@@ -121,7 +123,7 @@ Para probar esta API simplemente importe [este](https://drive.google.com/file/d/
 
 #### Guardar favorito a usuario
 
-~~~http
+~~~
   POST /api/v1.0/user/[user_id]/favorite
 ~~~
 
@@ -134,7 +136,7 @@ Para probar esta API simplemente importe [este](https://drive.google.com/file/d/
 
 #### Listar todos los favoritos de todos los usuarios
 
-~~~http
+~~~
   GET /api/v1.0/user/favorite
 ~~~
 
