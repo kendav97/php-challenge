@@ -70,6 +70,7 @@ Este es un desafío de PHP y laravel para demostrar mis habilidades como program
   composer install
   php artisan key:generate
   php artisan key:generate --env=testing
+  php artisan migrate
   php artisan passport:keys
   php artisan passport:client --personal --name="Personal Access Client"
   php artisan db:seed
