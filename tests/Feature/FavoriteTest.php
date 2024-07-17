@@ -3,7 +3,7 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use App\Models\UserFavoriteGift;
+use App\Models\UserFavoriteGif;
 
 class FavoriteTest extends TestCase
 {
@@ -12,17 +12,17 @@ class FavoriteTest extends TestCase
         $token = $this->getToken();
 
         $response = $this->withHeader('Authorization', 'Bearer '.$token)->post('/api/v1.0/user/1/favorite', [
-            'gift_id' => 'l4FGlmD871ayCC3cs',
+            'gif_id' => 'l4FGlmD871ayCC3cs',
             'alias' => 'Testing',
         ]);
 
         $response->assertStatus(200);
 
-        $userFavoriteGift = new UserFavoriteGift();
+        $userFavoriteGif = new UserFavoriteGif();
 
-        $this->assertDatabaseHas($userFavoriteGift->getTable(), [
+        $this->assertDatabaseHas($userFavoriteGif->getTable(), [
             'user_id' => 1,
-            'gift_id' => 'l4FGlmD871ayCC3cs',
+            'gif_id' => 'l4FGlmD871ayCC3cs',
             'alias' => 'Testing',
         ]);
     }

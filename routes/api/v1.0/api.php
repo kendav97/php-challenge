@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GiphyController;
-use App\Http\Controllers\UserFavoriteGiftController;
+use App\Http\Controllers\UserFavoriteGifController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +22,6 @@ Route::controller('auth:api')->middleware('user.logged')->group(function(){
     Route::get('giphy/search', [GiphyController::class, 'search']);
     Route::get('giphy/{id}', [GiphyController::class, 'getById']);
 
-    Route::get('user/favorite', [UserFavoriteGiftController::class, 'getAll']);
-    Route::post('user/{user_id}/favorite', [UserFavoriteGiftController::class, 'save']);
+    Route::get('user/favorite', [UserFavoriteGifController::class, 'getAll']);
+    Route::post('user/{user_id}/favorite', [UserFavoriteGifController::class, 'save']);
 });

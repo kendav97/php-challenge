@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 
-class UserFavoriteGift extends Model
+class UserFavoriteGif extends Model
 {
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'gift_id',
+        'gif_id',
         'alias',
         'user_id',
     ];

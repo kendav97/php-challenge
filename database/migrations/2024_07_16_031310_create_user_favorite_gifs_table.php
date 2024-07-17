@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_favorite_gifts', function (Blueprint $table) {
+        Schema::create('user_favorite_gifs', function (Blueprint $table) {
             $table->id();
-            $table->string('gift_id');
+            $table->string('gif_id');
             $table->string('alias');
             $table->unsignedBigInteger('user_id');
 
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->softDeletes();
         });
 
-        Schema::table('user_favorite_gifts', function (Blueprint $table) {
+        Schema::table('user_favorite_gifs', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_favorite_gifts');
+        Schema::dropIfExists('user_favorite_gifs');
     }
 };

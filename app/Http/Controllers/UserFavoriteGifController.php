@@ -4,19 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\UserFavoriteGift;
+use App\Models\UserFavoriteGif;
 
-class UserFavoriteGiftController extends Controller
+class UserFavoriteGifController extends Controller
 {
     public function getAll()
     {
-        return response()->json(UserFavoriteGift::all(), 200);
+        return response()->json(UserFavoriteGif::all(), 200);
     }
 
     public function save(Request $request, int $user_id)
     {
         $data = $request->validate([
-            'gift_id' => 'required',
+            'gif_id' => 'required',
             'alias' => 'required',
         ]);
         
@@ -25,8 +25,8 @@ class UserFavoriteGiftController extends Controller
             return response()->json(['status' => 400, 'message' => 'Validation error: the user id is invalid'], 400);
         }
 
-        UserFavoriteGift::create([
-            'gift_id' => $data['gift_id'],
+        UserFavoriteGif::create([
+            'gif_id' => $data['gif_id'],
             'alias' => $data['alias'],
             'user_id' => $user_id,
         ]);
