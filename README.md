@@ -72,6 +72,7 @@ Este es un desafío de PHP y laravel para demostrar mis habilidades como program
   php artisan key:generate --env=testing
   php artisan migrate
   php artisan passport:keys
+  chown -R www-data:www-data /var/www/storage
   php artisan passport:client --personal --name="Personal Access Client"
   php artisan db:seed
   ~~~
