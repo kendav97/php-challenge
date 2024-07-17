@@ -28,6 +28,22 @@ services:
     networks:
       - php-challenge
 
+  db-test:
+    image: mysql:lts
+    container_name: php-challenge-db-test
+    restart: unless-stopped
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_DATABASE: php-challenge-test
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_USER: admin
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - php-challenge
+
   nginx:
     image: nginx:alpine
     container_name: php-challenge-nginx
